@@ -9,4 +9,4 @@ RUN go build --ldflags="-w -s" -mod=readonly
 
 FROM scratch
 COPY --from=0 /build/k8s-csrapprove /
-CMD ["/k8s-csrapprove"]
+ENTRYPOINT ["/k8s-csrapprove"]
