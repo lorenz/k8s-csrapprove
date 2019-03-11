@@ -4,6 +4,8 @@ import (
 	"flag"
 	"time"
 
+	"k8s.io/klog"
+
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
@@ -12,7 +14,10 @@ import (
 
 func main() {
 	kubeconfig := flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
+	klog.InitFlags(nil)
+
 	flag.Parse()
+
 	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 	if err != nil {
 		panic(err.Error())
