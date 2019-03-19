@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"os"
 	"time"
 
 	"k8s.io/klog"
@@ -15,6 +16,7 @@ import (
 func main() {
 	kubeconfig := flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
 	klog.InitFlags(nil)
+	klog.SetOutput(os.Stdout)
 
 	flag.Parse()
 
@@ -30,6 +32,7 @@ func main() {
 
 	informerFactory := informers.NewSharedInformerFactory(clientset, 30*time.Second)
 	csrInformer := informerFactory.Certificates().V1beta1().CertificateSigningRequests()
+	go csrInformer.Informer().Run(make(<-chan struct{}))
 	csrApprover := approver.NewCSRApprovingController(clientset, csrInformer)
 	csrApprover.Run(1, make(<-chan struct{}))
 }
