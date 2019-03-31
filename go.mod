@@ -29,14 +29,15 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/square/go-jose.v2 v2.3.0 // indirect
 	gopkg.in/yaml.v2 v2.2.2 // indirect
-	k8s.io/api v0.0.0-20190222213804-5cb15d344471
-	k8s.io/apiextensions-apiserver v0.0.0-20190228180357-d002e88f6236 // indirect
-	k8s.io/apimachinery v0.0.0-20190221213512-86fb29eff628
-	k8s.io/apiserver v0.0.0-20190228174905-79427f02047f // indirect
-	k8s.io/client-go v10.0.0+incompatible
+	k8s.io/api v0.0.0-20190313235455-40a48860b5ab
+	k8s.io/apiextensions-apiserver v0.0.0-20190315093550-53c4693659ed
+	k8s.io/apimachinery v0.0.0-20190313205120-d7deff9243b1
+	k8s.io/apiserver v0.0.0-20190313205120-8b27c41bdbb1 // indirect
+	k8s.io/client-go v2.0.0-alpha.0.0.20190313235726-6ee68ca5fd83+incompatible
+	k8s.io/cloud-provider v0.0.0-20190323031113-9c9d72d1bf90 // indirect
 	k8s.io/klog v0.2.0
-	k8s.io/kube-openapi v0.0.0-20190306001800-15615b16d372 // indirect
-	k8s.io/kubernetes v1.13.4
+	k8s.io/kube-openapi v0.0.0-20190320154901-5e45bb682580 // indirect
+	k8s.io/kubernetes v1.14.0
 	k8s.io/utils v0.0.0-20190308190857-21c4ce38f2a7 // indirect
 	sigs.k8s.io/yaml v1.1.1-0.20190204175104-199c9c29c4e4 // indirect
 )
